@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package com.javatraining.corejavatraining.instancedemo;
+
+/**
+ * @author vinay
+ *
+ */
+public class InstnaceByNewInstance {
+	
+	String name ;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+}

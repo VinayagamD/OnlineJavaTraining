@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package com.javatraining.corejavatraining.instancedemo;
+
+/**
+ * @author vinay
+ *
+ */
+public class NewInstanceByClone implements Cloneable{
+
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		System.out.println("Clone called");
+		return super.clone();
+	}
+	
+	
+	
+	
+
+}

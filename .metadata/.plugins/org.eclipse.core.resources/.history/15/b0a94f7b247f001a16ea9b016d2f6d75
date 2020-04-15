@@ -1,0 +1,23 @@
+package com.javatraining.corejavatraining.instancedemo;
+
+import java.lang.reflect.Constructor;
+
+public class InstanceByReflections {
+	private String name; 
+	InstanceByReflections() 
+    { 
+    } 
+    public void setName(String name) 
+    { 
+        this.name = name; 
+    } 
+
+	public static void main(String[] args) {
+		try {
+			Constructor<InstanceByReflections> constructor = InstanceByReflections.class.getDeclaredConstructor();
+		} catch (NoSuchMethodException | SecurityException e) {
+			e.printStackTrace();
+		} 
+	}
+
+}

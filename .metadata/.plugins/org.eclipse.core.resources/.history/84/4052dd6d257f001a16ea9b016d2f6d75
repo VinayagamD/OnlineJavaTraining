@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package com.javatraining.corejavatraining.exception;
+
+import java.io.FileInputStream;
+
+/**
+ * @author vinay
+ *
+ */
+public class ExceptionResource {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try(FileInputStream inputStream = FileInputStream("message.txt")){
+			
+		}
+
+	}
+
+}

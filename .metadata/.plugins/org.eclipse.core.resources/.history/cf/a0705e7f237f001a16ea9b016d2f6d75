@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package com.javatraining.corejavatraining.instancedemo;
+
+import java.io.Serializable;
+
+/**
+ * @author vinay
+ *
+ */
+public class DeserializableExample implements Serializable {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package com.javatraining.corejavatraining.exception;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+/**
+ * @author vinay
+ *
+ */
+public class ExceptionResource {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		try(FileInputStream inputStream =new  FileInputStream("message.txt")){
+			
+		} catch (IOException | FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

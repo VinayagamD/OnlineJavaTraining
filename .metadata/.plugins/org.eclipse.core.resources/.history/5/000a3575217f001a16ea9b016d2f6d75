@@ -1,0 +1,5 @@
+package com.javatraining.corejavatraining.instancedemo;
+
+public class InstanceByNew {
+
+}
