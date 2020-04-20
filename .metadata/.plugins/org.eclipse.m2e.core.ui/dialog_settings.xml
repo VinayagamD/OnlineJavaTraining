@@ -47,8 +47,10 @@
 			<item value="com.javatraining"/>
 		</list>
 		<list key="name">
+			<item value="Testing Maven"/>
 		</list>
 		<list key="artifactId">
+			<item value="maventraing"/>
 			<item value="corejavatraining"/>
 		</list>
 		<list key="projectNameTemplate">
