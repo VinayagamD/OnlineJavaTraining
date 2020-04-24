@@ -59,6 +59,14 @@ public class ArraysExample {
 			
 		}
 		
+		for(Iterator<String> name = hotDrinks.iterator(); name.hasNext();) {
+			String nextName = name.next();
+			System.out.println(nextName);
+			name.remove();
+		}
+		
+		
+		
 		
 	}
 
