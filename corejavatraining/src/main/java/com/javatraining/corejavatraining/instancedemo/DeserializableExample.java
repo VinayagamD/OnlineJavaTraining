@@ -25,12 +25,16 @@ public class DeserializableExample implements Serializable {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/*
-		 * try { DeserializableExample d = new DeserializableExample("GeeksForGeeks");
-		 * FileOutputStream f = new FileOutputStream("file.txt"); ObjectOutputStream oos
-		 * = new ObjectOutputStream(f); oos.writeObject(d); oos.close(); f.close(); }
-		 * catch (Exception e) { e.printStackTrace(); }
-		 */
+	    try {
+	        DeserializableExample d = new DeserializableExample("GeeksForGeeks");
+            FileOutputStream f = new FileOutputStream("file.txt");
+            ObjectOutputStream oos = new ObjectOutputStream(f);
+            oos.writeObject(d);
+            oos.close();
+            f.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
         try
         { 
         	DeserializableExample d; 
@@ -43,9 +47,6 @@ public class DeserializableExample implements Serializable {
         { 
             e.printStackTrace(); 
         } 
-       
-
-		
 
 	}
 

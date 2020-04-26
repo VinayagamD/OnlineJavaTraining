@@ -1,6 +1,7 @@
 package com.javatraining.corejavatraining.arrays;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class StringArrayExample {
 	
@@ -21,10 +22,18 @@ public class StringArrayExample {
 		}
 		Arrays.asList(arrays).forEach(System.out::println);
 		
-		varargs( "Hello", 1,2, 3,4);
+		varargs(  1,2, 3,4);
+		Scanner scanner = new Scanner(System.in);
+		while(scanner.hasNext()) {
+			if(scanner.nextLine().equals("q")) {
+				break;
+			}
+			
+		}
+		
 	}
 	
-	public static  void varargs(String var,int ... varint ) {
+	public static  void varargs(int ... varint ) {
 		for (int i = 0; i < varint.length; i++) {
 			System.out.println(varint[i]);
 		}
