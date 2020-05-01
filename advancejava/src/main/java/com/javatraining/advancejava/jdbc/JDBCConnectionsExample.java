@@ -5,6 +5,7 @@ package com.javatraining.advancejava.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,36 +23,23 @@ public class JDBCConnectionsExample {
 	 */
 	public static void main(String[] args) {
 		// 1. Create Connection String
-		String url = "jdbc:mysql://localhost:3306/students";
+		String url = "jdbc:mysql://localhost:3306/test";
 		// 2. ADD USER CREDENTIALS 
 		String username = "root";
 		String password = "drago";
-		String sql = "SELECT * FROM students;";
+		String sql = "SELECT * FROM users WHERE username=? AND password=?;";
+		
 		try(Connection con = DriverManager.getConnection(url, username, password);
-			Statement statement = con.createStatement();
-			ResultSet resultSet = statement.executeQuery(sql);){
+			PreparedStatement statement = con.prepareStatement(sql);
+			){
 		// 3. JDBC CONNECTIONS
-			
+			statement.setString(1, "test");
+			statement.setString(2, "test12");
 		// 4. STATEMENT FROM CONNECTION
+			ResultSet rs = statement.executeQuery();
 		// 5. GET RESULT SET FROM STATEMENT
-			int counter = 0;
-			while(resultSet.next()) {
-				int id = resultSet.getInt("id");
-				String name = resultSet.getString("name");
-				String phoneNo = resultSet.getString("phone_no");
-				Timestamp timeStamp = resultSet.getTimestamp("created_at");
-				LocalDateTime createdAt = null;
-				LocalDateTime updatedAt = null;
-				if(timeStamp != null) {
-					createdAt = timeStamp.toLocalDateTime();
-				}
-				timeStamp = resultSet.getTimestamp("updated_at");
-				if(timeStamp != null) 
-				updatedAt = timeStamp.toLocalDateTime();
-				System.out.println(counter++ + " Id ==> " + id+ ", name ==> "+ name+" , Phone No ==> " +phoneNo + 
-						" , Created At ==> " + createdAt + " , Updated At ==> "+ updatedAt);
-				
-			}
+			System.out.println(rs.next());
+			
 			
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
