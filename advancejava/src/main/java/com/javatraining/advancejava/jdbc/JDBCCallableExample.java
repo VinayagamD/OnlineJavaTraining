@@ -5,7 +5,6 @@ package com.javatraining.advancejava.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,30 +15,25 @@ import java.time.LocalDateTime;
  * @author vinay
  *
  */
-public class JDBCConnectionsExample {
+public class JDBCCallableExample {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// 1. Create Connection String
-		String url = "jdbc:mysql://localhost:3306/test";
+		String url = "jdbc:mysql://localhost:3306/students";
 		// 2. ADD USER CREDENTIALS 
 		String username = "root";
 		String password = "drago";
-		String sql = "SELECT * FROM users WHERE username=? AND password=?;";
-		
+		String sql = "INSERT INTO students(roll_no, name, phone_no) VALUES (1234, 'test1', 'testphone');";
 		try(Connection con = DriverManager.getConnection(url, username, password);
-			PreparedStatement statement = con.prepareStatement(sql);
-			){
+			Statement statement = con.createStatement();){
 		// 3. JDBC CONNECTIONS
-			statement.setString(1, "test");
-			statement.setString(2, "test123");
+			int rows = statement.executeUpdate(sql);
 		// 4. STATEMENT FROM CONNECTION
-			ResultSet rs = statement.executeQuery();
 		// 5. GET RESULT SET FROM STATEMENT
-			System.out.println(rs.next());
-			
+			System.out.println(" ===> " +rows);
 			
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
